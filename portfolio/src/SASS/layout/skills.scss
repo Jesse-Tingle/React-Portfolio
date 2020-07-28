@@ -1,0 +1,43 @@
+.skills-container {
+	h1 {
+		margin-bottom: 0;
+		font-size: 1.5em;
+		margin-top: 1.5em;
+	}
+
+	ul {
+		font-size: 3em;
+		list-style-type: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		padding-top: 0.4em;
+
+		li {
+			padding: 0.5em;
+			padding-top: 0;
+			padding-bottom: 0;
+
+			img {
+				width: 55px;
+			}
+
+			.fa-html5 {
+				color: #4b97ff;
+			}
+
+			.fa-css3-alt {
+				color: #ff7000;
+			}
+
+			.fa-js {
+				color: #f7df00;
+				background-color: black;
+			}
+
+			.fa-react {
+				color: #52e3ff;
+			}
+		}
+	}
+}

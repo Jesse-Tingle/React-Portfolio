@@ -1,0 +1,15 @@
+.main-container {
+	.home-header {
+		display: flex;
+		align-items: baseline;
+
+		h1 {
+			font-size: 4.5em;
+			margin: 0;
+		}
+
+		h3 {
+			margin-left: 0.5em;
+		}
+	}
+}

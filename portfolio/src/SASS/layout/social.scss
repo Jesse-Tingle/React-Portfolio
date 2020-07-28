@@ -1,0 +1,16 @@
+.social-container {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 2em;
+
+	ul {
+		list-style-type: none;
+		display: flex;
+		margin-bottom: 0px;
+
+		li {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+}
