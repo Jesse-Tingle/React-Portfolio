@@ -1,7 +1,8 @@
 import React from "react";
+import axios from "axios";
 
 function ProjectForm() {
-	handleImageChange = (e) => {
+	const handleImageChange = (e) => {
 		const image = e.target.files[0];
 		const formData = new FormData();
 		formData.append("image", image, image.name);

@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, withRouter } from "react-router-dom";
 
 // components
 import HomePage from "./components/layout/HomePage";
