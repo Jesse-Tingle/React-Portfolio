@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { login } from "../../redux/actions/userActions";
 import { connect } from "react-redux";
-import spinner from "../../img/spinner.gif";
+// import spinner from "../../img/spinner.gif";
 
 function Login(props) {
 	console.log("login props", props);
@@ -10,7 +10,6 @@ function Login(props) {
 	// const [err, setErr] = useState("");
 
 	const [data, setData] = useState({
-		name: "",
 		email: "",
 		password: "",
 	});
@@ -24,14 +23,11 @@ function Login(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
 		props.login(data, props);
-		console.log("props.data", data, props);
-		console.log("props.history", props.history);
 	};
 
 	return (
-		<ContainerDiv className="container">
+		<div className="container">
 			<div id="overlay">
 				<form
 					onSubmit={handleSubmit}
@@ -41,15 +37,8 @@ function Login(props) {
 					{/* {err && <div className="err">{err}</div>} */}
 					<div
 						className="login-field"
-						className={props.isLoading ? "displayNone" : null}
+						// className={props.isLoading ? "displayNone" : null}
 					>
-						<input
-							type="text"
-							name="name"
-							placeholder="name"
-							value={data.name}
-							onChange={handleChange}
-						/>
 						<input
 							type="email"
 							name="email"
@@ -60,7 +49,7 @@ function Login(props) {
 					</div>
 					<div
 						className="login-field"
-						className={props.isLoading ? "displayNone" : null}
+						// className={props.isLoading ? "displayNone" : null}
 					>
 						<input
 							type="password"
@@ -72,26 +61,26 @@ function Login(props) {
 					</div>
 					<button
 						className="login-button"
-						className={props.isLoading ? "displayNone" : null}
+						// className={props.isLoading ? "displayNone" : null}
 						disabled={props.loading}
 						type="submit"
 					>
 						Log In
 					</button>
-					<div className={props.isLoading ? "loader" : "displayNone"}>
-						<img src={spinner} alt="" />
-						<h1>Loading...</h1>
+					<div>
+						{/* <img src={spinner} alt="" /> */}
+						{/* <h1>Loading...</h1> */}
 					</div>
 				</form>
 			</div>
-		</ContainerDiv>
+		</div>
 	);
 }
 
 function mapStateToProps(state) {
 	console.log("login state", state);
 	return {
-		isLoading: state.userReducer.isLoading,
+		// isLoading: state.userReducer.isLoading,
 		// parent_name: state.userReducer.parent_name
 	};
 }

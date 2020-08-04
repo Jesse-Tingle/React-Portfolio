@@ -5,11 +5,13 @@ import ProjectForm from "./ProjectForm.js";
 import "../../SASS/projects/projects.scss";
 
 function ProjectsMainPaige() {
+	const token = window.localStorage.getItem("token");
+
 	return (
 		<div className="projects-container">
 			<h1>Projects</h1>
 
-			<ProjectForm />
+			{token && <ProjectForm />}
 		</div>
 	);
 }

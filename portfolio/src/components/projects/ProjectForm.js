@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios  from "axios";
 
 function ProjectForm() {
 	const handleImageChange = (e) => {
@@ -8,9 +8,9 @@ function ProjectForm() {
 		formData.append("image", image, image.name);
 	};
 
-	const uploadImage = (formData) => {
-		axios.post("/project/image", formData).then((res) => {});
-	};
+	// const uploadImage = (formData) => {
+	// 	axios.post("/project/image", formData).then((res) => {});
+	// };
 
 	return (
 		<div>

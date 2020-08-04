@@ -6,18 +6,23 @@ import ProtectedRoute from "./ProtectedRoute.js";
 import Login from "../components/auth/Login.js";
 import ProjectForm from "../components/projects/ProjectForm.js";
 import ProjectsMainPage from "../components/projects/ProjectsMainPage.js";
+import HomePage from "../components/layout/HomePage.js";
+import LoginButton from "../components/auth/LoginButton.js";
+import Skills from "../components/layout/Skills.js";
 
-import Splash from "../splash/Splash";
+// import Splash from "../splash/Splash";
 
 //Styling
-import "../../App.css";
+// import "../../App.css";
 
 const Routes = (props) => {
 	return (
 		<>
 			<Router>
-				<Route exact path="/" component={ProjectsMainPage} />
-				<Route exact path="/login" render={(props) => <Login {...props} />} />
+				<Route exact path="/" component={HomePage} />
+				{/* <Route path="/login" component={LoginButton} /> */}
+				<Route path="/login-form" component={Login} />
+				<Route path="/skills" component={Skills} />
 			</Router>
 		</>
 	);
