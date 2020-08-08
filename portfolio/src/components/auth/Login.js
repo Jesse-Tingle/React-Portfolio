@@ -1,11 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { login } from "../../redux/actions/userActions";
 import { connect } from "react-redux";
 // import spinner from "../../img/spinner.gif";
 
 function Login(props) {
-	console.log("login props", props);
+	console.log("login props: ", props);
+	const dispatch = useDispatch();
+	const loggedIn = useSelector((state) => state);
+
+	console.log("useSelector loggedIn: ", loggedIn);
+	let history = useHistory();
+
+	// console.log("login props", props);
 
 	// const [err, setErr] = useState("");
 
@@ -23,7 +32,8 @@ function Login(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		props.login(data, props);
+		dispatch(login({ data }));
+		history.push("/");
 	};
 
 	return (
@@ -77,12 +87,13 @@ function Login(props) {
 	);
 }
 
-function mapStateToProps(state) {
-	console.log("login state", state);
-	return {
-		// isLoading: state.userReducer.isLoading,
-		// parent_name: state.userReducer.parent_name
-	};
-}
+// function mapStateToProps(state) {
+// 	console.log("login state", state);
+// 	return {
+// 		isLoading: state.userReducer.isLoading,
+// 		// loggedIn: state.userReducer.loggedIn,
+// 		// parent_name: state.userReducer.parent_name
+// 	};
+// }
 
-export default connect(mapStateToProps, { login })(Login);
+export default Login;

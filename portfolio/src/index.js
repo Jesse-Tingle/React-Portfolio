@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// import { createBrowserHistory } from "history";
+// import createBrowserHistory from "history/createBrowserHistory";
+
+// export const history = createBrowserHistory();
+
 import "./index.css";
 import App from "./App";
 

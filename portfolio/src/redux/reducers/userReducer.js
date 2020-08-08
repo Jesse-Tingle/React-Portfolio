@@ -1,7 +1,8 @@
 import { LOADING, LOGIN_SUCCESS } from "../actions/types";
 const initialState = {
 	isLoading: false,
-	user: {
+	loggedIn: false,
+	loggedInUser: {
 		email: "",
 		id: 1,
 		message: "",
@@ -22,7 +23,8 @@ const userReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isLoading: false,
-				user: action.payload,
+				loggedIn: true,
+				loggedInUser: action.payload,
 			};
 		default:
 			return state;
