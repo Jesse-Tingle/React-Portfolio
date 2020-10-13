@@ -1,18 +1,22 @@
 import { LOADING_PROJECTS, PROJECTS_LOADED } from "../actions/types.js";
 
 const initialState = {
-	isLoading: false,
-	project: {
-		id: 1,
-		title: "",
-		description: "",
-		stack: [
+	projects: {
+		isLoading: false,
+		projects: [
 			{
-				projects_id: 1,
-				stack_id: 1,
 				id: 1,
-				stack_title: "",
+				title: "",
 				description: "",
+				stack: [
+					{
+						projects_id: 1,
+						stack_id: 1,
+						id: 1,
+						stack_title: "",
+						description: "",
+					},
+				],
 			},
 		],
 	},
@@ -29,7 +33,7 @@ const projectReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isLoading: false,
-				project: action.payload,
+				projects: action.payload,
 			};
 		default:
 			return state;
