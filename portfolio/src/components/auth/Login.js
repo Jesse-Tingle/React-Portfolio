@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { login } from "../../redux/actions/userActions";
-import { connect } from "react-redux";
-// import spinner from "../../img/spinner.gif";
 
 function Login(props) {
 	console.log("login props: ", props);

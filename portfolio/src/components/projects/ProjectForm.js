@@ -14,7 +14,22 @@ function ProjectForm() {
 
 	return (
 		<div>
-			<input type="file" id="image-upload" onChange={handleImageChange} />
+			<form>
+				<input
+					type="text"
+					placeholder="title"
+					name="title"
+					// value={data.title}
+					// onChange={handleChange}
+				/>
+				<input
+					type="text"
+					placeholder="description"
+					// value={data.description}
+					// onChange={handleChange}
+				/>
+				<input type="file" id="image-upload" onChange={handleImageChange} />
+			</form>
 		</div>
 	);
 }

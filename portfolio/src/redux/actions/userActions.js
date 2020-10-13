@@ -9,16 +9,19 @@ export const login = (creds, props) => (dispatch) => {
 	console.log("userAction props", props);
 	console.log("userAction creds", creds);
 	// const history = useHistory();
+	// console.log("token", token);
 
 	dispatch({ type: LOADING });
-	// return setTimeout(() => {
+
 	api()
-		.post("http://localhost:5000/api/auth/login", creds.data)
+		.post("/auth/login", creds.data, {
+			// withCredentials: true,
+		})
 		.then((res) => {
-			// localStorage.setItem("token", res.data.token);
+			localStorage.setItem("token", res.data.token);
 			console.log("userActions res.data: ", res.data);
 			console.log("userAction login props", props);
-			// console.log("token", res.data.token);
+			console.log("token", res.data.token);
 			store.dispatch({
 				type: LOGIN_SUCCESS,
 				payload: res.data,
@@ -26,35 +29,8 @@ export const login = (creds, props) => (dispatch) => {
 			const currentState = store.getState();
 			console.log("currentState => ", currentState);
 			return res.data;
-			// props.history.push({
-			// 	pathname: "/",
-			// 	state: {
-			// 		credentials: res.data,
-			// 	},
-			// });
 		})
 		.catch((err) => console.log("err message:", err));
-	// }, 1000);
 };
 
 store.subscribe(login);
-
-// export const loginCoach = (coachCreds) => (dispatch) => {
-// 	return api
-// 		.post(
-// 			`${process.env.REACT_APP_BACKEND}/auth/login?user_type=coach`,
-// 			coachCreds,
-// 			{ withCredentials: true }
-// 		)
-// 		.then((res) => {
-// 			console.log(res.data);
-// 			dispatch({
-// 				type: LOGIN_SUCCESS,
-// 				payload: res.data,
-// 			});
-// 			return res.data;
-// 		})
-// 		.catch((err) => {
-// 			console.log(err.response);
-// 		});
-// };

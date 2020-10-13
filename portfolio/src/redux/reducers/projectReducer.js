@@ -1,4 +1,4 @@
-import { LOADING, PROJECTS_LOADED } from "../actions/types.js";
+import { LOADING_PROJECTS, PROJECTS_LOADED } from "../actions/types.js";
 
 const initialState = {
 	isLoading: false,
@@ -20,7 +20,7 @@ const initialState = {
 
 const projectReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case LOADING:
+		case LOADING_PROJECTS:
 			return {
 				...state,
 				isLoading: true,
