@@ -1,4 +1,6 @@
 .skills-container {
+	margin-top: 1rem;
+
 	h1 {
 		margin-bottom: 0;
 		font-size: 1.5em;
@@ -12,11 +14,13 @@
 		margin: 0;
 		padding: 0;
 		padding-top: 0.4em;
+		width: 50rem;
+		flex-wrap: wrap;
 
 		li {
 			padding: 0.5em;
 			padding-top: 0;
-			padding-bottom: 0;
+			padding-bottom: 3rem;
 
 			img {
 				width: 55px;
