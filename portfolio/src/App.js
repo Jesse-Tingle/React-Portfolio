@@ -10,7 +10,6 @@ import Social from "./components/layout/Social";
 
 // styling
 import "./SASS/app.scss";
-import HomePage from "./components/layout/HomePage.js";
 
 function App() {
 	return (

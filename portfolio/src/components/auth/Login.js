@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { login } from "../../redux/actions/userActions";
@@ -7,14 +7,9 @@ import { login } from "../../redux/actions/userActions";
 function Login(props) {
 	console.log("login props: ", props);
 	const dispatch = useDispatch();
-	const loggedIn = useSelector((state) => state);
+	// const loggedIn = useSelector((state) => state);
 
-	console.log("useSelector loggedIn: ", loggedIn);
 	let history = useHistory();
-
-	// console.log("login props", props);
-
-	// const [err, setErr] = useState("");
 
 	const [data, setData] = useState({
 		email: "",
@@ -84,14 +79,5 @@ function Login(props) {
 		</div>
 	);
 }
-
-// function mapStateToProps(state) {
-// 	console.log("login state", state);
-// 	return {
-// 		isLoading: state.userReducer.isLoading,
-// 		// loggedIn: state.userReducer.loggedIn,
-// 		// parent_name: state.userReducer.parent_name
-// 	};
-// }
 
 export default Login;
