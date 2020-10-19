@@ -36,7 +36,7 @@ function ProjectsMainPaige() {
 					return (
 						<div key={i}>
 							<img
-								src={`http://localhost:5000/api/projects/images/${e.src}`}
+								src={`http://localhost:5000/${e.src}`}
 								alt="portfolio display"
 							/>
 							<h4>

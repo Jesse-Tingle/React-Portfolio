@@ -1,9 +1,4 @@
-import {
-	LOADING_PROJECTS,
-	PROJECTS_LOADED,
-	LOADING_IMAGES,
-	IMAGES_LOADED,
-} from "../actions/types.js";
+import { LOADING_PROJECTS, PROJECTS_LOADED } from "../actions/types.js";
 
 const initialState = {
 	isLoading: false,
@@ -22,25 +17,6 @@ const initialState = {
 			category: "",
 		},
 	],
-	// projects: {
-	// 	isLoading: false,
-	// 	projects: [
-	// 		{
-	// 			id: 1,
-	// 			title: "",
-	// 			description: "",
-	// 			stack: [
-	// 				{
-	// 					projects_id: 1,
-	// 					stack_id: 1,
-	// 					id: 1,
-	// 					stack_title: "",
-	// 					description: "",
-	// 				},
-	// 			],
-	// 		},
-	// 	],
-	// },
 };
 
 const projectReducer = (state = initialState, action) => {
@@ -56,17 +32,7 @@ const projectReducer = (state = initialState, action) => {
 				isLoading: false,
 				projects: action.payload,
 			};
-		case LOADING_IMAGES:
-			return {
-				...state,
-				isLoading: true,
-			};
-		case IMAGES_LOADED:
-			return {
-				...state,
-				isLoading: false,
-				images: action.payload,
-			};
+
 		default:
 			return state;
 	}
