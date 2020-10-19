@@ -1,36 +1,31 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
-import { getImages } from "../../../redux/actions/imageActions.js";
+// import { getImages } from "../../../redux/actions/imageActions.js";
 
-function Images() {
-	const dispatch = useDispatch();
+function Images(props) {
+	// const dispatch = useDispatch();
+	console.log("images props", props);
+	const images = props.projectImages;
+	console.log("images ======>", images);
 
 	useEffect(() => {
-		dispatch(getImages());
-		console.log("------You are here-------");
-	}, [dispatch]);
-	const imageList = useSelector((state) => state.ImagesReducer.images.files);
+		console.log("images props", props);
+		console.log("images", images);
+	}, [props, images]);
 
-	// return <div className="cont">{console.log("imageList", imageList)}</div>;
-
-	return !imageList ? (
-		<div>No images found</div>
-	) : (
-		imageList.map((el, index) => {
-			return (
-				<div className="img-container" key={index}>
-					<img src={`http://localhost:5000/uploads/${el}`} alt="" />
-				</div>
-			);
-		})
+	return (
+		<div>
+			{/* {images.map((e, i) => {
+				return (
+					<div>
+						{e.src}
+						<img src={`http://localhost:5000/${e.src}`} alt="" />
+					</div>
+				);
+			})} */}
+		</div>
 	);
-
-	// return (
-	// 	<div className="container">
-	// 		<img src="http://localhost:5000/uploads/puppy.png " />
-	// 	</div>
-	// );
 }
 
 export default Images;
