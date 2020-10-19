@@ -1,19 +1,25 @@
 .main-container {
 	.home-header {
 		display: flex;
-		align-items: baseline;
+		justify-content: space-between;
+		align-items: center;
 
-		img {
-			width: 4rem;
-		}
+		nav a {
+			padding-right: 2rem;
+			font-family: "Space Mono", monospace;
+			text-decoration: none;
+			// opacity: 0.5;
+			color: #b5b9c0;
 
-		h1 {
-			font-size: 4.5em;
-			margin: 0;
-		}
+			span {
+				color: #24e7fc;
+			}
 
-		h3 {
-			margin-left: 0.5em;
+			span.resume {
+				border: 1px solid #24e7fc;
+				border-radius: 9px;
+				padding: 0.5rem;
+			}
 		}
 	}
 

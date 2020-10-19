@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getImages } from "../../redux/actions/imageActions.js";
+import { getImages } from "../../../redux/actions/imageActions.js";
 
 function Images() {
 	const dispatch = useDispatch();

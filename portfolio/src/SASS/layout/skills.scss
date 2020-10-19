@@ -3,7 +3,7 @@
 
 	h1 {
 		margin-bottom: 0;
-		font-size: 1.5em;
+		font-size: 2em;
 		margin-top: 1.5em;
 	}
 
@@ -41,6 +41,11 @@
 
 			.fa-react {
 				color: #52e3ff;
+			}
+
+			.lessLogo {
+				filter: invert(70%) sepia(1%) saturate(3091%) hue-rotate(297deg)
+					brightness(147%) contrast(129%);
 			}
 		}
 	}

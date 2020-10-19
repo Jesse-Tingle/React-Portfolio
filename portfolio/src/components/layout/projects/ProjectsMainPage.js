@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+// import Project from "./Project";
 
 import {
 	getProjectList,
 	getImages,
-} from "../../redux/actions/projectActions.js";
+} from "../../../redux/actions/projectActions.js";
 
-import "../../SASS/projects/projects.scss";
+import "../../../SASS/layout/projectMain.scss";
 
 function ProjectsMainPaige() {
 	const token = window.localStorage.getItem("token");
@@ -39,14 +40,14 @@ function ProjectsMainPaige() {
 								src={`http://localhost:5000/${e.src}`}
 								alt="portfolio display"
 							/>
-							<h4>
-								Title: <br />
-								{e.title}
-							</h4>
-							<h5>
-								Description:
-								<br /> {e.description}
-							</h5>
+							<div className="title-container">
+								{/* <h1>{e.id}</h1> */}
+								<h4>Title:</h4>
+								<h5>{e.title}</h5>
+							</div>
+
+							<h4>Description:</h4>
+							<h5>{e.description}</h5>
 							<p>
 								GitHub Repo:{" "}
 								<a
@@ -57,7 +58,7 @@ function ProjectsMainPaige() {
 									{e.github_url}
 								</a>
 							</p>
-							<p>
+							<p className="deploy-link">
 								Deploy Link:{" "}
 								<a
 									href={e.deploy_link}
@@ -67,6 +68,17 @@ function ProjectsMainPaige() {
 									{e.deploy_link}
 								</a>
 							</p>
+							<Link
+								className="read-more"
+								to={{
+									pathname: "/project",
+									projectProps: { id: e.id },
+								}}
+							>
+								{console.log("e.id", e.id)}
+								read more...
+							</Link>
+							{/* <Project id={e.id} /> */}
 						</div>
 					);
 				})}
