@@ -1,0 +1,52 @@
+.skills-container {
+	margin-top: 1rem;
+
+	h1 {
+		margin-bottom: 0;
+		font-size: 2em;
+		margin-top: 1.5em;
+	}
+
+	ul {
+		font-size: 3em;
+		list-style-type: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		padding-top: 0.4em;
+		width: 50rem;
+		flex-wrap: wrap;
+
+		li {
+			padding: 0.5em;
+			padding-top: 0;
+			padding-bottom: 3rem;
+
+			img {
+				width: 55px;
+			}
+
+			.fa-html5 {
+				color: #4b97ff;
+			}
+
+			.fa-css3-alt {
+				color: #ff7000;
+			}
+
+			.fa-js {
+				color: #f7df00;
+				background-color: black;
+			}
+
+			.fa-react {
+				color: #52e3ff;
+			}
+
+			.lessLogo {
+				filter: invert(70%) sepia(1%) saturate(3091%) hue-rotate(297deg)
+					brightness(147%) contrast(129%);
+			}
+		}
+	}
+}
